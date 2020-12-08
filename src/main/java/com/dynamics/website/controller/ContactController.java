@@ -31,7 +31,7 @@ public class ContactController {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
 
         mailMessage.setFrom(email);
-        mailMessage.setTo("akashranjandas18cs@sit.ac.in");
+        mailMessage.setTo("dynamicsPOC19.sit@gmail.com");
 
         String mailSubject = fullName +  " has sent a message";
         String mailContent = "Sender name: " + fullName + "\n";
@@ -45,8 +45,6 @@ public class ContactController {
         mailSender.send(mailMessage);
         System.out.println("Mail Sent");
 
-        return "message.html";
-
-
+        return "messsage.html";
     }
 }
