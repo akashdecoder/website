@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,23 +76,22 @@
     </div>
 </section>
 
-<form class="reg-form">
+<form class="reg-form" th:action="@{/dynamics/events/add}" th:object="${codingUser}" method="post">
+    <h2>Register</h2>
     <p class="helper-text">* denotes a required field</p>
     <div class="field-row">
         <label class="form-label" for="firstName">First name</label>
-        <input type="text" id="firstName" class="field text-field first-name-field" required>
-        <span class="message"></span>
+        <input type="text" id="firstName" class="field text-field first-name-field" th:field="*{firstName}" required>
     </div>
     <div class="field-row">
         <label class="form-label cf" for="lastName">Last name</label>
-        <input type="text" id="lastName" class="field text-field last-name-field" required>
-        <span class="message"></span>
+        <input type="text" id="lastName" class="field text-field last-name-field" th:field="*{lastName}" required>
     </div>
 
 
     <div class="field-row">
         <label class="form-label">Year</label>
-        <select class="form-dropdown field">
+        <select class="form-dropdown field" th:field="*{year}">
             <option value="0">--Select--</option>
             <option value="1st Year"> 1st Year </option>
             <option value="2nd Year"> 2nd Year </option>
@@ -100,7 +99,7 @@
     </div>
     <div class="field-row">
         <label class="form-label">Branch</label>
-        <select class="field form-dropdown" required>
+        <select class="field form-dropdown" th:field="*{branch}" required>
             <option value="0">--Select--</option>
             <option value="BIO">Bio Technology</option>
             <option value="CHEM">Chemical Engineering</option>
@@ -117,28 +116,30 @@
     </div>
 
     <div class="field-row">
-        <label class="form-label" for="email">USN</label>
-        <input type="text" id="usn" class="field text-field email-field" required>
+        <label class="form-label" for="usn">USN</label>
+        <input type="text" id="usn" class="field text-field email-field" th:field="*{usn}" required>
         <span class="message"></span>
     </div>
     <div class="field-row">
         <label class="form-label">Event*</label>
-        <select class="field form-dropdown">
+        <select class="field form-dropdown" th:field="*{event_name}">
             <option value="0">--Select--</option>
             <option value="cevent1">--</option>
         </select>
     </div>
     <div class="field-row">
         <label class="form-label" for="email">Email</label>
-        <input type="email" id="email" class="field text-field email-field" required>
+        <input type="email" id="email" class="field text-field email-field" th:field="*{email}" required>
         <span class="message"></span>
     </div>
     <div class="field-row">
         <label class="form-label" for="tel">Contact</label>
-        <input type="tel" id="tel" class="field text-field tel-field" required>
+        <input type="tel" id="tel" class="field text-field tel-field" th:field="*{contact}" required>
         <span class="message"></span>
     </div>
-    <center><a href="#" class="sim-btn hvr-bounce-to-top pricingTable-signup">Register</a></center>
+    <div>
+        <input type="submit" class="sim-btn hvr-bounce-to-top pricingTable-signup" value="Register">
+    </div>
 </form>
 <div class="copyrights">
     <div class="container">
