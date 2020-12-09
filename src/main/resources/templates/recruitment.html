@@ -92,17 +92,14 @@
     <div class="field-row">
         <label class="form-label" for="firstName">First name</label>
         <input type="text" id="firstName" class="field text-field first-name-field"  th:field="*{firstName}" required>
-<!--        <span class="message" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>-->
     </div>
     <div class="field-row">
         <label class="form-label cf" for="lastName">Last name</label>
         <input type="text" id="lastName" class="field text-field last-name-field" th:field="*{lastName}" required>
-<!--        <span class="message"  th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>-->
     </div>
     <div class="field-row">
         <label class="form-label cf" for="usn">USN</label>
         <input type="text" id="usn" class="field text-field last-name-field" th:field="*{usn}" required>
-        <!--        <span class="message"  th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>-->
     </div>
 
 
@@ -113,7 +110,6 @@
             <option value="1st Year"> 1st Year </option>
             <option value="2nd Year"> 2nd Year </option>
         </select>
-<!--        <span  th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span>-->
     </div>
     <div class="field-row">
         <label class="form-label">Branch</label>
@@ -131,7 +127,6 @@
             <option value="TEL">Telecommunication Engineering</option>
 
         </select>
-<!--        <span th:if="${#fields.hasErrors('branch')}" th:errors="*{branch}"></span>-->
     </div>
     <div class="field-row">
         <label class="form-label" for="email">Email</label>
@@ -140,8 +135,8 @@
     </div>
     <div class="field-row">
         <label class="form-label" for="tel">Contact</label>
-        <input type="tel" id="tel" class="field text-field tel-field" required>
-<!--        <span class="message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>-->
+        <input type="tel" id="tel" class="field text-field tel-field" th:field="*{contact}" required>
+        <span class="message"></span>
     </div>
     <div>
         <input type="submit" class="sim-btn hvr-bounce-to-top pricingTable-signup" value="Register">
